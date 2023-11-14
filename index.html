@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@385&family=Open+Sans:ital@0;1&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="video-background">
+        <video src="./assets/images/video.mp4" autoplay muted loop></video>
+        <div class="mascara-video"></div>
+    </div>
+
+    <div class="conteudo-principal">
+
+        <div class="caixa-texto">
+            <img src="./assets/images/logo.png"
+                alt="logo em caixa alta e letras coloridas com os dizeres 'The Super Mario Bros.' " class="logo-mario">
+
+            <p class="titulo">Encanadores Mario & Luigi - Resolvendo seus problemas com estilo</p>
+            <p>Você já se encontrou em uma situação de emergência com encanamento? Vazamentos inesperados, canos
+                entupidos
+                ou torneiras que não param de pingar? Não se preocupe, porque estamos aqui para salvar o dia!
+                Apresentamos a
+                vocês os encanadores mais famosos do Reino dos Cogumelos - Mario e Luigi</p>
+            <button class="botao-principal" onclick="abrirForms()">Fale Conosco</button>
+        </div>
+        <div>
+            <img src="./assets/images/mario.png"
+                alt="Imagem de Mario e Luigi de costas um para o outro com os braços cruzados, Mario segura uma chave de grifo, enquanto Luigi segura um desentupidor"
+                class="img-mario-luigi">
+        </div>
+
+    </div>
+    <form class="fale-conosco">
+
+        <h3>Fale Conosco</h3>
+
+        <input type="text" name="name" id="name" placeholder="Nome Completo">
+        <input type="tel" name="tel" id="tel" placeholder="Telefone com DDD">
+        <input type="email" name="email" id="email" placeholder="E-mail">
+        <textarea name="mensagem" id="message" placeholder="Digite aqui sua mensagem"></textarea>
+
+        <button type="submit" class="enviar-contato" onclick="fecharForms()">Enviar</button>
+    </form>
+
+    <div class="mascara-forms"></div>
+</body>
+
+<script>
+    let forms = document.querySelector(".fale-conosco")
+    let mascaraForms = document.querySelector(".mascara-forms")
+
+
+    function abrirForms() {
+        if (innerWidth >= 900) {
+            forms.style.left = "30rem"
+            mascaraForms.style.visibility = "visible"
+        }
+        else {
+            forms.style.left = "25%"
+            mascaraForms.style.visibility = "visible"
+        }
+    }
+
+    function fecharForms() {
+        if (innerWidth >= 900) {
+            forms.style.left = "-14rem"
+            mascaraForms.style.visibility = "hidden"
+            alert("Mensagem enviada!")
+        }
+        else {
+            forms.style.left = "-100%"
+            mascaraForms.style.visibility = "hidden"
+            alert("Mensagem enviada!")
+        }
+    }
+</script>
+
+</html>
